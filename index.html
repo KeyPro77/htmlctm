@@ -4,12 +4,11 @@
   
 <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
 <meta name="apple-mobile-web-app-title" content="CodePen">
-
+<script src="https://kit.fontawesome.com/948afd80c8.js" crossorigin="anonymous"></script>
 
 
 <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
 
-	
 
   <title>HTML Cheat Toolset</title>
   
@@ -181,15 +180,26 @@ span#year {
 	box-sizing: border-box;
 }
 .projcard-container {
-  position: absolute;
-  top: 50%;
-  left: 17%;
-	margin-left: auto;
-	margin-right: auto;
+  
+  transform: translateY(20%);
+  display: flex;
+  margin-top: 350px;
+  margin: 0 auto;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 	width: 1000px;
 }
 .projcard {
-	position: relative;
+  transform: translateY(20%);
+  display: flex;
+  margin-top: 350px;
+  margin: 0 auto;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 	width: 100%;
 	height: 300px;
 	margin-bottom: 40px;
@@ -364,6 +374,75 @@ span#year {
 	width: 6px;
 	top: 10px;
 }
+
+.cardp {
+  width: 70%;
+  text-align: center;
+  margin-top: 350px;
+  margin: 0 auto;
+  padding: 30px;
+  width: 400px;
+  min-height: 380px;
+  transform: translateY(20%);
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: rgb(222, 192, 19);
+  border-radius: 20px;
+  box-shadow: 0px 0 31px 0px rgba(0, 0, 0, 0.221);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+
+}
+
+.card {
+  width: 70%;
+
+  text-align: center;
+  
+  
+  padding: 30px;
+  width: 400px;
+  min-height: 380px;
+  
+  display: flex;
+
+  flex-direction: column;
+  
+  justify-content: space-evenly;
+  background-color: rgba(255, 255, 255, 0.109);
+  border-radius: 20px;
+  box-shadow: 0px 0 31px 0px rgba(0, 0, 0, 0.221);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+
+#et5{
+  background-color: #000000;
+
+
+  z-index: 2;
+
+  position: relative;
+  outline: none;
+  text-decoration: none;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: rgb(222, 192, 19);
+  height: 45px;
+  width: 130px;
+  opacity: 1;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
 .projcard-tag::after {
 	content: '';
 	position: absolute;
@@ -455,13 +534,13 @@ document.querySelectorAll(".projcard-description").forEach(function(box) {
         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="fas fa-home"></i> Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><i class="fas fa-id-card"></i> HTML Fake Validierer</a>
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><i class="fa-sharp fa-solid fa-file-code"></i> HTML Fake Validierer</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><i class="fas fa-id-card"></i> CSS Fake Validierer</a>
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><i class="fa-solid fa-file-code"></i> CSS Fake Validierer</a>
       </li>
     <li class="nav-item">
-        <a class="nav-link" id="setting-tab" data-toggle="tab" href="#setting" role="tab" aria-controls="setting" aria-selected="false"><i class="fas fa-cogs"></i> more coming soon...</a>
+        <a class="nav-link" id="setting-tab" data-toggle="tab" href="#setting" role="tab" aria-controls="setting" aria-selected="false"><i class="fa-solid fa-crown"></i> Premium</a>
       </li>
   </ul>
 
@@ -469,46 +548,57 @@ document.querySelectorAll(".projcard-description").forEach(function(box) {
   <div class="tab-content">
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
       
-      <div class="clock">
-        <div class="inside">
-            <div class="content">
-                <p class='days'><span id="sun">SUN</span>&nbsp;<span id="mon">MON</span>&nbsp;<span id=tus"">TUS</span>&nbsp;<span id="wed">WED</span>&nbsp;<span id="thu">THU</span>&nbsp;<span id="fri">FRI</span>&nbsp;<span id="sat">SAT</span></p>
-                <br>
-                <p class='text'><span id='hours'></span>:<span id='min'></span>:<span id='sec'></span>&nbsp;&nbsp;<span id='time'></span></p>
-                <p id=date>
-                    <span id='cal'><img src="https://i.imgur.com/DzEzjHh.png?1" alt="cal" /></span>
-                    <span id='day'></span>
-                    <span id='month'></span>
-                    <span id='year'></span>
-                </p>
-            </div>
-        </div>
-    </div>
-    <br>
-    <br>
-    <br>
+      <div class="cardp">
+        <h1>Premium</h1> <i class="fa-solid fa-crown"></i>
+        <p>€ 5.00/Mon.</p>
+        <p>Mit Premium hast du die ultimativen Tools um durch alle Situationen durchzukommen!</p>
+        <p>- Alle Aktuellen SÜS</p>
+        <p>- Code Snippets</p>
+        <p>- und mehr........</p>
+        <a id="w3" href=""><button id="et5">available soon</button></a>
+      </div>
+
     <div class="projcard-container">
 		
       <div class="projcard projcard-blue">
         <div class="projcard-innerbox">
           <img class="projcard-img" src="coding_display.jpg" />
           <div class="projcard-textbox">
-            <div class="projcard-title">Wieso ist validieren unnötig?</div>
+            <div class="projcard-title">Wieso ist validieren unötig?</div>
             <div class="projcard-subtitle">"Einer der Hauptgründe"</div>
             <div class="projcard-bar"></div>
-            <div class="projcard-description">Der Grund, warum validieren unnötig ist, liegt darin, dass die meisten Browser den HTML-Code einer Webseite sehr großzügig auslegen. Oftmals wird z. B. von dem Ersteller einer Webseite das schließende Tag weg gelassen. Solche Fehler korrigieren alle moderne Browser automatisch. Für den Ersteller der Webseite ist das natürlich praktisch.</div>
+            <div class="projcard-description">Der Grund, warum validieren unötig ist, liegt darin, dass die meisten Browser den HTML-Code einer Webseite sehr großzügig auslegen. Oftmals wird z. B. von dem Ersteller einer Webseite das schließende Tag weg gelassen. Solche Fehler korrigieren alle moderne Browser automatisch. Für den Ersteller der Webseite ist das natürlich praktisch.</div>
             
           </div>
         </div>
       </div>
       
+
+     
+
       
 
     </div>
   </div>
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><iframe  style= "overflow:hidden" scrolling="no" src="https://keypro77.github.io/html" frameborder="0" width="100%" height="2300%"></iframe></div>
-  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"><iframe  style= "overflow:hidden" scrolling="no" src="https://keypro77.github.io/css" frameborder="0" width="100%" height="2300%"></iframe></div> 
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><iframe  style= "overflow:hidden" scrolling="no" src="https://7fj3vnwyzp6zfqucxj5a9a.on.drv.tw/HTML%20Cheat%20Tools/Test/html/main.html" frameborder="0" width="100%" height="2300%"></iframe></div>
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"><iframe  style= "overflow:hidden" scrolling="no" src="https://7fj3vnwyzp6zfqucxj5a9a.on.drv.tw/HTML%20Cheat%20Tools/Test/css/main.html" frameborder="0" width="100%" height="2300%"></iframe></div> 
   <div class="tab-pane fade" id="setting" role="tabpanel" aria-labelledby="setting-tab"> 
+
+ 
+    
+
+
+    <div class="cardp">
+      <h1>Premium</h1> <i class="fa-solid fa-crown"></i>
+      <p>€ 5.00/Mon.</p>
+      <p>Mit Premium hast du die ultimativen Tools um durch alle Situationen durchzukommen!</p>
+      <p>- Alle Aktuellen SÜS</p>
+      <p>- Code Snippets</p>
+      <p>- und mehr........</p>
+      <a id="w3" href=""><button id="et5">available soon</button></a>
+    </div>
+
+
 
   </div>
 
