@@ -8,7 +8,7 @@
 
 
 <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
-
+<script defer src="main.js"></script>
 
   <title>HTML Cheat Toolset</title>
   
@@ -398,6 +398,29 @@ span#year {
 
 }
 
+.cardpt {
+  width: 70%;
+  text-align: center;
+  margin-top: 350px;
+  margin: 0 auto;
+  padding: 30px;
+  width: 800px;
+  min-height: 380px;
+  transform: translateY(20%);
+  display: flex;
+    
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: rgb(222, 192, 19);
+  border-radius: 20px;
+  box-shadow: 0px 0 31px 0px rgba(0, 0, 0, 0.221);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+
+}
+
 .card {
   width: 70%;
 
@@ -461,6 +484,87 @@ span#year {
 	text-align: center;
 	
   }
+
+  #main-holder {
+  width: 50%;
+  height: 50%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 7px;
+  
+  border-radius: 50px;
+  border-radius: 50px;
+  border-radius: 50px;
+background: rgb(222, 192, 19);
+
+
+}
+
+
+
+#login-error-msg-holder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+#login-error-msg {
+  width: 23%;
+  text-align: center;
+  margin: 0;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #8a0000;
+  border: 1px solid #8a0000;
+  background-color: #e58f8f;
+  opacity: 0;
+}
+
+#error-msg-second-line {
+  display: block;
+}
+
+#login-form {
+  align-self: flex-start;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.login-form-field::placeholder {
+  color: #3a3a3a;
+}
+
+.login-form-field {
+  border: none;
+  border-bottom: 1px solid #3a3a3a;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  outline: none;
+  padding: 0px 0px 5px 5px;
+  background-color: rgb(222, 192, 19);
+}
+
+
+#login-form-submit {
+  width: 100%;
+  padding: 7px;
+  border: none;
+  border-radius: 10px;
+  color: rgb(222, 192, 19);
+  font-weight: bold;
+  background-color: rgb(0, 0, 0);
+  cursor: pointer;
+  outline: none;
+}
+
+ 
+
 
 #tile-1 .nav-tabs .active
 {
@@ -549,13 +653,13 @@ document.querySelectorAll(".projcard-description").forEach(function(box) {
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
       
       <div class="cardp">
-        <h1>Premium</h1> <i class="fa-solid fa-crown"></i>
+        <h1>Premium</h1> <img src="htmlctfinal.png" style="width: 200px;" alt="">
         <p>€ 5.00/Mon.</p>
         <p>Mit Premium hast du die ultimativen Tools um durch alle Situationen durchzukommen!</p>
         <p>- Alle Aktuellen SÜS</p>
         <p>- Code Snippets</p>
         <p>- und mehr........</p>
-        <a id="w3" href=""><button id="et5">available soon</button></a>
+        <a id="w3" href="https://buy.stripe.com/eVa4hL4KY8jcbfybIJ"><button id="et5">BUY</button></a>
       </div>
 
     <div class="projcard-container">
@@ -589,13 +693,38 @@ document.querySelectorAll(".projcard-description").forEach(function(box) {
 
 
     <div class="cardp">
-      <h1>Premium</h1> <i class="fa-solid fa-crown"></i>
+      <h1>Premium</h1> <img src="htmlctfinal.png" style="width: 200px;" alt="">
       <p>€ 5.00/Mon.</p>
       <p>Mit Premium hast du die ultimativen Tools um durch alle Situationen durchzukommen!</p>
       <p>- Alle Aktuellen SÜS</p>
       <p>- Code Snippets</p>
       <p>- und mehr........</p>
-      <a id="w3" href=""><button id="et5">available soon</button></a>
+      <a id="w3" href="https://buy.stripe.com/eVa4hL4KY8jcbfybIJ"><button id="et5">BUY</button></a>
+    </div>
+<br>
+<br>
+    <div class="cardpt">
+      <h1>Login</h1> 
+      <main id="main-holder">
+        <br>
+        <i class="fa-solid fa-crown"></i>
+        
+        
+        <div id="login-error-msg-holder">
+          <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
+        </div>
+        
+        <form id="login-form">
+          <input type="text" name="username" id="username-field" class="login-form-field" placeholder="E-Mail">
+          <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
+          <input type="submit" value="Login" id="login-form-submit">
+          <br>
+    
+          
+        </form>
+      
+      </main>
+      
     </div>
 
 
