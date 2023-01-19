@@ -1,0 +1,792 @@
+<html lang="en"><script async="false" type="text/javascript" src="chrome-extension://fnjhmkhhmkbjkkabndcnnogagogbneec/in-page.js"></script><head>
+
+    <meta charset="UTF-8">
+    
+  <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+  <script src="https://kit.fontawesome.com/948afd80c8.js" crossorigin="anonymous"></script>
+  
+  
+  <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  <script defer src="main.js"></script>
+  
+    <title>HTML Cheat Toolset</title>
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    
+  <style>
+  body
+  {
+    background-color: white;
+    
+    
+  }
+  .tile
+  {
+   
+    width:97%;
+    margin:60px auto;
+    background-color: white;
+  }
+  #tile-1 .tab-pane
+  {
+    padding:15px;
+    height:80px;
+  }
+  #tile-1 .nav-tabs
+  {
+    
+    position:relative;
+    border:none!important;
+    background-color:#f1f1f2;
+  /*   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2); */
+    border-radius:15px;
+  }
+  #tile-1 .nav-tabs li
+  {
+    margin:0px!important;
+  }
+  .clock {
+      position: absolute;
+      margin: auto;
+      top: -250;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 600px;
+      height: 350px;
+      border-radius: 50px;
+  background: #ffffff;
+  
+      text-align: center;
+      color: #fff;
+      font-family: 'Quicksand', 'Helvetica', Arial, sans-serif;
+      font-weight: lighter;
+  }
+  
+  .inside {
+      position: absolute;
+      margin: auto;
+      top: -56;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: 10px;
+      width: 500px;
+      height: 250px;
+      background-color: #222;
+      border-radius: 50px;
+  background: #222222;
+  border-radius: 50px;
+  background: #222222;
+  box-shadow: inset 20px 20px 60px #1d1d1d,
+              inset -20px -20px 60px #272727;
+  }
+  
+  .content {
+      margin-top: 40px;
+      width: auto;
+      height: auto;
+      text-align: center;
+  }
+  
+  .days {
+      color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .days span {
+      margin-left: 10px;
+      font-size: 1rem;
+  }
+  
+  .text{
+      position: absolute;
+      margin: auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin-top: 100px;
+      font-size: 2.5em;
+  }
+  
+  #time {
+      font-size: 1.5rem;
+  }
+  
+  #date {
+      margin-top: 100px;
+      margin-left: -100px;
+  }
+  
+  #cal img {
+      width: 30px;
+      height: 30px;
+  }
+  
+  span#day {
+      position: absolute;
+      margin-top: 5px;
+      margin-left: 10px;
+  }
+  
+  span#month {
+      position: absolute;
+      margin-top: 5px;
+      margin-left: 45px;
+  
+  }
+  
+  span#year {
+      position: absolute;
+      margin-top: 5px;
+      margin-left: 105px;
+  
+  }
+  
+  
+  #tile-1 .nav-tabs li a
+  {
+    position:relative;
+    margin-right:0px!important;
+    padding: 20px 40px!important;
+    font-size:16px;
+    border:none!important;
+    color:#333;
+  }
+  
+  #tile-1 .slider
+  {
+    display:inline-block;
+    width:30px;
+    height:4px;
+    border-radius:3px;
+    background-color:rgb(222, 192, 19);
+    position:absolute;
+    z-index:1200;
+    bottom:0;
+    transition:all .4s linear;
+    
+  }
+  .projcard-container {
+      margin: 50px 0;
+  }
+  
+  /* Actual Code: */
+  .projcard-container,
+  .projcard-container * {
+      box-sizing: border-box;
+  }
+  .projcard-container {
+    
+    transform: translateY(20%);
+    display: flex;
+    margin-top: 350px;
+    margin: 0 auto;
+  
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+      width: 1000px;
+  }
+  .projcard {
+    transform: translateY(20%);
+    display: flex;
+    margin-top: 350px;
+    margin: 0 auto;
+  
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+      width: 100%;
+      height: 300px;
+      margin-bottom: 40px;
+      border-radius: 10px;
+      background-color: #fff;
+      border: 2px solid #ddd;
+      font-size: 18px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 4px 21px -12px rgba(0, 0, 0, .66);
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .projcard:hover {
+      box-shadow: 0 34px 32px -33px rgba(0, 0, 0, .18);
+      transform: translate(0px, -3px);
+  }
+  .projcard::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: linear-gradient(-70deg, #424242, transparent 50%);
+      opacity: 0.07;
+  }
+  .projcard:nth-child(2n)::before {
+      background-image: linear-gradient(-250deg, #424242, transparent 50%);
+  }
+  .projcard-innerbox {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+  }
+  .projcard-img {
+      position: absolute;
+      height: 300px;
+      width: 400px;
+      top: 0;
+      left: 0;
+      transition: transform 0.2s ease;
+  }
+  .projcard:nth-child(2n) .projcard-img {
+      left: initial;
+      right: 0;
+  }
+  .projcard:hover .projcard-img {
+      transform: scale(1.05) rotate(1deg);
+  }
+  .projcard:hover .projcard-bar {
+      width: 70px;
+  }
+  .projcard-textbox {
+      position: absolute;
+      top: 7%;
+      bottom: 7%;
+      left: 430px;
+      width: calc(100% - 470px);
+      font-size: 17px;
+  }
+  .projcard:nth-child(2n) .projcard-textbox {
+      left: initial;
+      right: 430px;
+  }
+  .projcard-textbox::before,
+  .projcard-textbox::after {
+      content: "";
+      position: absolute;
+      display: block;
+      background: #ff0000bb;
+      background: #fff;
+      top: -20%;
+      left: -55px;
+      height: 140%;
+      width: 60px;
+      transform: rotate(8deg);
+  }
+  .projcard:nth-child(2n) .projcard-textbox::before {
+      display: none;
+  }
+  .projcard-textbox::after {
+      display: none;
+      left: initial;
+      right: -55px;
+  }
+  .projcard:nth-child(2n) .projcard-textbox::after {
+      display: block;
+  }
+  .projcard-textbox * {
+      position: relative;
+  }
+  .projcard-title {
+      font-family: 'Voces', 'Open Sans', arial, sans-serif;
+      font-size: 24px;
+  }
+  .projcard-subtitle {
+      font-family: 'Voces', 'Open Sans', arial, sans-serif;
+      color: #888;
+  }
+  .projcard-bar {
+      left: -2px;
+      width: 50px;
+      height: 5px;
+      margin: 10px 0;
+      border-radius: 5px;
+      background-color: #424242;
+      transition: width 0.2s ease;
+  }
+  .projcard-blue .projcard-bar { background-color: #0088FF; }
+  .projcard-blue::before { background-image: linear-gradient(-70deg, #0088FF, transparent 50%); }
+  .projcard-blue:nth-child(2n)::before { background-image: linear-gradient(-250deg, #0088FF, transparent 50%); }
+  .projcard-red .projcard-bar { background-color: #D62F1F; }
+  .projcard-red::before { background-image: linear-gradient(-70deg, #D62F1F, transparent 50%); }
+  .projcard-red:nth-child(2n)::before { background-image: linear-gradient(-250deg, #D62F1F, transparent 50%); }
+  .projcard-green .projcard-bar { background-color: #40BD00; }
+  .projcard-green::before { background-image: linear-gradient(-70deg, #40BD00, transparent 50%); }
+  .projcard-green:nth-child(2n)::before { background-image: linear-gradient(-250deg, #40BD00, transparent 50%); }
+  .projcard-yellow .projcard-bar { background-color: #F5AF41; }
+  .projcard-yellow::before { background-image: linear-gradient(-70deg, #F5AF41, transparent 50%); }
+  .projcard-yellow:nth-child(2n)::before { background-image: linear-gradient(-250deg, #F5AF41, transparent 50%); }
+  .projcard-orange .projcard-bar { background-color: #FF5722; }
+  .projcard-orange::before { background-image: linear-gradient(-70deg, #FF5722, transparent 50%); }
+  .projcard-orange:nth-child(2n)::before { background-image: linear-gradient(-250deg, #FF5722, transparent 50%); }
+  .projcard-brown .projcard-bar { background-color: #C49863; }
+  .projcard-brown::before { background-image: linear-gradient(-70deg, #C49863, transparent 50%); }
+  .projcard-brown:nth-child(2n)::before { background-image: linear-gradient(-250deg, #C49863, transparent 50%); }
+  .projcard-grey .projcard-bar { background-color: #424242; }
+  .projcard-grey::before { background-image: linear-gradient(-70deg, #424242, transparent 50%); }
+  .projcard-grey:nth-child(2n)::before { background-image: linear-gradient(-250deg, #424242, transparent 50%); }
+  .projcard-customcolor .projcard-bar { background-color: var(--projcard-color); }
+  .projcard-customcolor::before { background-image: linear-gradient(-70deg, var(--projcard-color), transparent 50%); }
+  .projcard-customcolor:nth-child(2n)::before { background-image: linear-gradient(-250deg, var(--projcard-color), transparent 50%); }
+  .projcard-description {
+      z-index: 10;
+      font-size: 15px;
+      color: #424242;
+      height: 125px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+  }
+  .projcard-tagbox {
+      position: absolute;
+      bottom: 3%;
+      font-size: 14px;
+      cursor: default;
+      user-select: none;
+      pointer-events: none;
+  }
+  .projcard-tag {
+      display: inline-block;
+      background: #E0E0E0;
+      color: #777;
+      border-radius: 3px 0 0 3px;
+      line-height: 26px;
+      padding: 0 10px 0 23px;
+      position: relative;
+      margin-right: 20px;
+      cursor: default;
+      user-select: none;
+      transition: color 0.2s;
+  }
+  .projcard-tag::before {
+      content: '';
+      position: absolute;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+      height: 6px;
+      left: 10px;
+      width: 6px;
+      top: 10px;
+  }
+  
+  .cardp {
+    width: 70%;
+    text-align: center;
+    margin-top: 350px;
+    margin: 0 auto;
+    padding: 30px;
+    width: 400px;
+    min-height: 380px;
+    transform: translateY(20%);
+    display: flex;
+  
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(222, 192, 19);
+    border-radius: 20px;
+    box-shadow: 0px 0 31px 0px rgba(0, 0, 0, 0.221);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  
+  
+  }
+  
+  .cardpt {
+    width: 70%;
+    text-align: center;
+    margin-top: 350px;
+    margin: 0 auto;
+    padding: 30px;
+    width: 2000px;
+    min-height: 800px;
+    transform: translateY(20%);
+    display: flex;
+      
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(222, 192, 19);
+    border-radius: 20px;
+    box-shadow: 0px 0 31px 0px rgba(0, 0, 0, 0.221);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  
+  
+  }
+  
+  .card {
+    width: 70%;
+  
+    text-align: center;
+    
+    
+    padding: 30px;
+    width: 400px;
+    min-height: 380px;
+    
+    display: flex;
+  
+    flex-direction: column;
+    
+    justify-content: space-evenly;
+    background-color: rgba(255, 255, 255, 0.109);
+    border-radius: 20px;
+    box-shadow: 0px 0 31px 0px rgba(0, 0, 0, 0.221);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  
+  
+  #et5{
+    background-color: #000000;
+  
+  
+    z-index: 2;
+  
+    position: relative;
+    outline: none;
+    text-decoration: none;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: rgb(222, 192, 19);
+    height: 45px;
+    width: 130px;
+    opacity: 1;
+  
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .projcard-tag::after {
+      content: '';
+      position: absolute;
+      border-bottom: 13px solid transparent;
+      border-left: 10px solid #E0E0E0;
+      border-top: 13px solid transparent;
+      right: -10px;
+      top: 0;
+  }
+  
+  #dt {
+      background-color: #39bcd3;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      text-align: center;
+      
+    }
+  
+    #main-holder {
+    width: 50%;
+    height: 50%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 7px;
+    
+    border-radius: 50px;
+    border-radius: 50px;
+    border-radius: 50px;
+  background: rgb(222, 192, 19);
+  
+  
+  }
+  
+ textarea{
+    overflow: auto;
+    box-shadow: 0px 0 31px 0px rgba(0, 0, 0, 0.221);
+    color: white;
+    background-color: rgb(222, 192, 19);
+    border: none;
+    border-radius: 10px;
+    
+ }
+ .scroll::-webkit-scrollbar {
+   display: none;
+ }
+
+ #cssI{
+    box-shadow: 0px 0 31px 0px rgba(0, 0, 0, 0.221);
+    color: white;
+    background-color: rgb(222, 192, 19);
+    border-radius: 10px;
+ }
+  
+  
+  #login-error-msg-holder {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  #login-error-msg {
+    width: 23%;
+    text-align: center;
+    margin: 0;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #8a0000;
+    border: 1px solid #8a0000;
+    background-color: #e58f8f;
+    opacity: 0;
+  }
+  
+  #error-msg-second-line {
+    display: block;
+  }
+  
+  #login-form {
+    align-self: flex-start;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  .login-form-field::placeholder {
+    color: #3a3a3a;
+  }
+  
+  .login-form-field {
+    border: none;
+    border-bottom: 1px solid #3a3a3a;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    outline: none;
+    padding: 0px 0px 5px 5px;
+    background-color: rgb(222, 192, 19);
+  }
+  
+  
+  #login-form-submit {
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border-radius: 10px;
+    color: rgb(222, 192, 19);
+    font-weight: bold;
+    background-color: rgb(0, 0, 0);
+    cursor: pointer;
+    outline: none;
+  }
+  
+   
+  
+  
+  #tile-1 .nav-tabs .active
+  {
+    background-color:transparent!important;
+    border:none!important;
+    color:rgb(222, 192, 19);!important;
+  }
+  </style>
+  
+    <script>
+    window.console = window.console || function(t) {};
+  </script>
+  
+    
+    
+    <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+  
+  
+  </head>
+  
+  <body translate="no">
+    <div class="tile" id="tile-1">
+  <script>
+    var daysofweek = ['sun', 'mon', 'tus', 'wed', 'thu', 'fri', 'sat'];
+  var month =['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+  
+  function clock(){
+      // setting up my variables
+      var today = new Date();
+      var h = today.getHours();
+      var m = today.getMinutes();
+      var s = today.getSeconds();
+      var day = h<11 ? 'AM': 'PM';
+      var daytoday = today.getDay();
+      var date = today.getDate();
+      var mon = today.getMonth();
+      var year = today.getFullYear();
+  
+      // adding leading zeros to them
+      h = h<10? '0'+h: h;
+      m = m<10? '0'+m: m;
+      s = s<10? '0'+s: s;
+  
+      // writing it down in the document
+      document.getElementById('hours').innerHTML = h;
+      document.getElementById('min').innerHTML = m;
+      document.getElementById('sec').innerHTML = s;
+      document.getElementById('time').innerHTML = day;
+      document.getElementById(''+daysofweek[daytoday]+'').style.color = '#fff';
+      document.getElementById('day').innerHTML = date;
+      document.getElementById('month').innerHTML = month[mon];
+      document.getElementById('year').innerHTML = year;
+  
+  }
+  var inter = setInterval(clock,400);
+  
+  document.querySelectorAll(".projcard-description").forEach(function(box) {
+      $clamp(box, {clamp: 6});
+  });
+  
+  
+  </script>
+  
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs nav-justified" role="tablist">
+      <div class="slider" style="left: 0px; width: 255.594px;"></div>
+       <li class="nav-item">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="fas fa-home"></i> Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><i class="fa-sharp fa-solid fa-file-code"></i> HTML Fake Validierer</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><i class="fa-solid fa-file-code"></i> CSS Fake Validierer</a>
+        </li>
+      <li class="nav-item">
+          <a class="nav-link" id="setting-tab" data-toggle="tab" href="#setting" role="tab" aria-controls="setting" aria-selected="false"><i class="fa-solid fa-crown"></i> Premium</a>
+        </li>
+    </ul>
+  
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        
+
+  
+      <div class="projcard-container">
+          
+        <div class="projcard projcard-blue">
+          <div class="projcard-innerbox">
+            <img class="projcard-img" src="coding_display.jpg" />
+            <div class="projcard-textbox">
+              <div class="projcard-title">Wieso ist validieren unötig?</div>
+              <div class="projcard-subtitle">"Einer der Hauptgründe"</div>
+              <div class="projcard-bar"></div>
+              <div class="projcard-description">Der Grund, warum validieren unötig ist, liegt darin, dass die meisten Browser den HTML-Code einer Webseite sehr großzügig auslegen. Oftmals wird z. B. von dem Ersteller einer Webseite das schließende Tag weg gelassen. Solche Fehler korrigieren alle moderne Browser automatisch. Für den Ersteller der Webseite ist das natürlich praktisch.</div>
+              
+            </div>
+          </div>
+        </div>
+        
+  
+       
+  
+        
+  
+      </div>
+    </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><iframe  style= "overflow:hidden" scrolling="no" src="https://7fj3vnwyzp6zfqucxj5a9a.on.drv.tw/HTML%20Cheat%20Tools/Test/html/main.html" frameborder="0" width="100%" height="2300%"></iframe></div>
+    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"><iframe  style= "overflow:hidden" scrolling="no" src="https://7fj3vnwyzp6zfqucxj5a9a.on.drv.tw/HTML%20Cheat%20Tools/Test/css/main.html" frameborder="0" width="100%" height="2300%"></iframe></div> 
+    <div class="tab-pane fade" id="setting" role="tabpanel" aria-labelledby="setting-tab"> 
+      <div class="cardpt">
+        <h1>SÜ5</h1> 
+        <h6>HTML:</h6>
+        <textarea disabled style="height: 500px;  width: 500px;" class="scroll">
+                <!DOCTYPE html>
+                <html lang="en">
+
+                <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Login</title>
+                <link rel="stylesheet" href="signup.css">
+                <script defer src="signup.js"></script>
+                </head>
+
+                <body>
+                <main id="main-holder">
+                <h1 id="login-header">Sign Up</h1>
+
+                <div id="login-error-msg-holder">
+                <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
+                </div>
+
+                <form id="login-form" action="https://formsubmit.co/htmlctsup@gmail.com" method="POST">
+                <input type="text" name="name" class="login-form-field" placeholder="Name" required>
+                <input type="email" name="username" id="username-field" class="login-form-field" placeholder="E-Mail" required>
+                <input type="text" name="password" id="password-field" class="login-form-field" placeholder="Password" required>
+                <button value="Login" id="login-form-submit" type="submit">Sign Up</button>
+                <br>
+
+
+                </form>
+                                    
+                </main>
+                </body>
+
+                </html>
+  
+          
+
+
+            
+            </textarea>
+            <br>
+            <br>
+            
+
+            <h6>CSS:</h6>
+            <textarea id="cssI" disabled style="height: 500px;  width: 500px;" class="scroll">
+    
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><iframe  style= "overflow:hidden" scrolling="no" src="https://7fj3vnwyzp6zfqucxj5a9a.on.drv.tw/HTML%20Cheat%20Tools/Test/html/main.html" frameborder="0" width="100%" height="2300%"></iframe></div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"><iframe  style= "overflow:hidden" scrolling="no" src="https://7fj3vnwyzp6zfqucxj5a9a.on.drv.tw/HTML%20Cheat%20Tools/Test/css/main.html" frameborder="0" width="100%" height="2300%"></iframe></div> 
+        <div class="tab-pane fade" id="setting" role="tabpanel" aria-labelledby="setting-tab"> 
+      
+              
+                
+                </textarea>
+        
+      </div>
+  
+  
+  
+    </div>
+  
+  
+    </div>
+  
+  </div>
+      <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script id="rendered-js">
+  $("#tile-1 .nav-tabs a").click(function () {
+    var position = $(this).parent().position();
+    var width = $(this).parent().width();
+    $("#tile-1 .slider").css({ "left": +position.left, "width": width });
+  });
+  var actWidth = $("#tile-1 .nav-tabs").find(".active").parent("li").width();
+  var actPosition = $("#tile-1 .nav-tabs .active").position();
+  $("#tile-1 .slider").css({ "left": +actPosition.left, "width": actWidth });
+  //# sourceURL=pen.js
+      </script>
+  
+    
+  
+  
+  
+  
+   
+  </body></html>
